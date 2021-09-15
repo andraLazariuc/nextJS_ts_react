@@ -7,15 +7,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import moment from 'moment';
 
+import type { SerializedContract } from './ContractList';
+
 type CardProps = {
-    contract: {
-        company: string;
-        contractId: number;
-        periodStart: string;
-        periodEnd: string;
-        scheduledForRenewal: boolean;
-        negotiationRenewalDate: string;
-    };
+    contract: SerializedContract;
 };
 
 const useStyles = makeStyles((theme) => ({

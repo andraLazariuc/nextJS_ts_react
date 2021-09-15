@@ -4,9 +4,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-import type { Contract } from '@/db/contract';
 import { useContracts } from '@/hooks/contract';
 import ContractCard from './ContractCard';
+
+export type SerializedContract = {
+    company: string;
+    contractId: number;
+    periodStart: string;
+    periodEnd: string;
+    scheduledForRenewal: boolean;
+    negotiationRenewalDate: string;
+};
 
 const useStyles = makeStyles({
     root: {
@@ -26,9 +34,10 @@ const ContractList: NextPage = () => {
     return (
         <div className={classes.root}>
             <Grid container spacing={4}>
-                {contracts?.map((contract: Contract) => (
+                {contracts?.map((contract: SerializedContract) => (
                     <Grid item xs={12} sm={6} md={3} key={contract.contractId}>
                         <Paper elevation={0} className={classes.paper}>
+                            {console.log(typeof contract.periodStart)}
                             <ContractCard contract={contract} />
                         </Paper>
                     </Grid>
