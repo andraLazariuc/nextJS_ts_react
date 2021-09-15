@@ -1,0 +1,1 @@
+export default function fetcher(url: string) { return fetch(url).then((resp) => resp.json()); }
