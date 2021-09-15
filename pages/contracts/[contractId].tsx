@@ -4,12 +4,12 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import superjson from 'superjson';
 
 import { findContractById, getContracts } from '@/db/index';
-import type { Contract } from '@/db/contract';
+import type { SerializedContract } from '@/db/contract';
 // import { useContract } from '@/hooks/index';
 import Navigation from '@/components/Navigation';
 import ContractView from '@/components/contracts/ContractView';
 
-export default function ContractPage({ contract }: { contract: Contract }): JSX.Element {
+export default function ContractPage({ contract }: { contract: SerializedContract }): JSX.Element {
     if (!contract) return <Error statusCode={404} />;
 
     return (

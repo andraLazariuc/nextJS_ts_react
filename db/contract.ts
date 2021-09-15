@@ -48,8 +48,6 @@ export const contracts = Array(10)
     });
 
 export async function getContracts(): Promise<Contract[]> {
-    console.log('initial contract 9 in db');
-    console.log(contracts[9]);
     return contracts;
 }
 

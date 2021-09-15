@@ -29,7 +29,6 @@ const ContractList: NextPage = () => {
                 {contracts?.map((contract: SerializedContract) => (
                     <Grid item xs={12} sm={6} md={3} key={contract.contractId}>
                         <Paper elevation={0} className={classes.paper}>
-                            {console.log(typeof contract.periodStart)}
                             <ContractCard contract={contract} />
                         </Paper>
                     </Grid>
