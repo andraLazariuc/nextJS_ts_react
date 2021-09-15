@@ -7,10 +7,15 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import moment from 'moment';
 
-import type { Contract } from '@/db/contract';
-
 type CardProps = {
-    contract: Contract;
+    contract: {
+        company: string;
+        contractId: number;
+        periodStart: string;
+        periodEnd: string;
+        scheduledForRenewal: boolean;
+        negotiationRenewalDate: string;
+    };
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +46,7 @@ const ContractCard = ({ contract }: CardProps): JSX.Element => {
     const { company, periodStart, periodEnd, scheduledForRenewal, negotiationRenewalDate } = contract;
 
     return (
-        <Link href={`/contracts/${contract.contractId}`}>
+        <Link href={`/contracts/${contract.contractId}`} passHref>
             <Card className={classes.root}>
                 <CardContent>
                     <Typography variant="h5" component="h2" className={classes.title}>
