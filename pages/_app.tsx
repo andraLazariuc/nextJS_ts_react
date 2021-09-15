@@ -1,7 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { SnackbarProvider } from 'notistack';
+
+import theme from '@/styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+    return (
+        <ThemeProvider theme={theme}>
+            <SnackbarProvider>
+                <Component {...pageProps} />
+            </SnackbarProvider>
+        </ThemeProvider>
+    );
 }
-export default MyApp
+
+export default MyApp;
