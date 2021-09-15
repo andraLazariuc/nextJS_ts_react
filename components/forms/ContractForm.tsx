@@ -2,10 +2,8 @@ import { Button, Grid } from '@material-ui/core';
 import { Control, FieldValues, useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
 
-import type { Contract } from '@/db/contract';
-
+import type { Contract, SerializedContract } from '@/db/contract';
 import { CustomFormInputDate, CustomFormSwitch, CustomFormInputText } from './inputs';
-import { SerializedContract } from '../contracts/ContractList';
 
 export const ContractForm = ({ contract }: { contract: SerializedContract }): JSX.Element => {
     const { enqueueSnackbar } = useSnackbar();

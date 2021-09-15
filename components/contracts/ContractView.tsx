@@ -5,10 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 
 import { ContractForm } from '@/components/forms';
-import type { Contract } from '@/db/contract';
+import type { SerializedContract } from '@/db/contract';
 
 type ContractViewProps = {
-    contract: Contract;
+    contract: SerializedContract;
 };
 
 const useStyles = makeStyles({

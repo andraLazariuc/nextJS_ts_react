@@ -10,6 +10,15 @@ export type Contract = {
     negotiationRenewalDate: Date;
 };
 
+export type SerializedContract = {
+    company: string;
+    contractId: number;
+    periodStart: string;
+    periodEnd: string;
+    scheduledForRenewal: boolean;
+    negotiationRenewalDate: string;
+};
+
 export type NewContract = {
     company: string;
     periodStart: Date;

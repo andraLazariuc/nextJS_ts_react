@@ -6,15 +6,7 @@ import Grid from '@material-ui/core/Grid';
 
 import { useContracts } from '@/hooks/contract';
 import ContractCard from './ContractCard';
-
-export type SerializedContract = {
-    company: string;
-    contractId: number;
-    periodStart: string;
-    periodEnd: string;
-    scheduledForRenewal: boolean;
-    negotiationRenewalDate: string;
-};
+import type { SerializedContract } from '@/db/contract';
 
 const useStyles = makeStyles({
     root: {

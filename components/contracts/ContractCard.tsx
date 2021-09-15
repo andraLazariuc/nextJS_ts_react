@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import moment from 'moment';
 
-import type { SerializedContract } from './ContractList';
+import type { SerializedContract } from '@/db/contract';
 
 type CardProps = {
     contract: SerializedContract;
